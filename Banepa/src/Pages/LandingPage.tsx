@@ -1,6 +1,8 @@
 import { Hero } from "../Components/Hero";
 import { Information } from "../Components/Information";
 import { Introduction } from "../Components/Introduction";
+import { News } from "../Components/News";
+import { Publication } from "../Components/Publication";
 
 export const LandingPage = () => {
   return (
@@ -9,6 +11,8 @@ export const LandingPage = () => {
         <Hero />
         <Introduction />
         <Information />
+        <News />
+        <Publication />
       </div>
     </>
   );

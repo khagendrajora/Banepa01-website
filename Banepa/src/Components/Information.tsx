@@ -37,14 +37,13 @@ export const Information = () => {
   ];
   return (
     <>
-      <div className="py-20 md:py-0">
+      <div className="py-10 font-poppin  ">
+        <h1 className="font-bold flex mx-auto flex-col text-[50px] w-1/3 text-black text-center py-3 bg-ov ">
+          <h1>जानकारी</h1>
+          <div className="bg-white min-w-[130px]  mx-auto h-[1px]"></div>
+        </h1>
         <div className="w-full bg-zinc-100 flex flex-col items-center justify-center ">
-          <h1 className="font-bold flex flex-col text-4xl w-full text-white text-center py-10 bg-gov gap-2">
-            जानकारी
-            <div className="bg-white min-w-[150px] w-1/12 mx-auto h-[1px]"></div>
-          </h1>
-
-          <div className="py-10 slider-containers w-[340px] sm:w-[645px] md:w-[800px] lg:w-[1045px] xl:w-[1300px]">
+          <div className="py-10 slider-containers w-[340px] sm:w-[645px] md:w-[800px] lg:w-[1045px] xl:w-[1300px] 2xl:w-[1550px]">
             <Slider {...settings}>
               {images.map((image, index) => (
                 <div

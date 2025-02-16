@@ -68,7 +68,7 @@ export const Navbar = () => {
           </h1>
         </div>
         <div className="lg:flex flex-col hidden w-full ">
-          <div className="bg-[#245fb9] flex justify-between p-[4px] text-white w-full">
+          <div className="bg-[#245fb9] flex justify-between p-3 text-white w-full">
             <div className="flex  ">
               <h1 className="md:text-sm text-xs min-w-[160px] flex items-center ">
                 <FontAwesomeIcon
@@ -84,14 +84,14 @@ export const Navbar = () => {
                   size="lg"
                   className="me-1 hover:scale-105 cursor-pointer flex my-auto text-red-500"
                 />
-                info@banepa.org
+                info@banepa1.org
               </div>
             </div>
             <div className="flex w-full justify-end text-black">
               <LanguageSelector />
             </div>
           </div>
-          <div className="w-full p-2 flex gap-4 justify-between">
+          <div className="w-full p-3 flex gap-4 justify-between">
             <ul className="list-none text-xs lg:text-sm p-2 flex w-full gap-5 text-slate-500 md:gap-4 xl:gap-10 items-center font-semibold">
               <Link
                 to="/"
@@ -134,7 +134,7 @@ export const Navbar = () => {
                         </li>
                       </Link>
                       <hr />
-                      <Link to="/toleintro" className="hover:bg-gray-100 p-3">
+                      <Link to="/teams" className="hover:bg-gray-100 p-3">
                         <li className="cursor-pointer ">
                           {" "}
                           {t("navbar.key2.subKey.key3")}
@@ -145,7 +145,7 @@ export const Navbar = () => {
                 )}
               </li>
               <Link
-                to="/workdone"
+                to=""
                 className="hover:text-black cursor-pointer"
                 onClick={() => {
                   works();
@@ -181,17 +181,6 @@ export const Navbar = () => {
                         </li>
                       </Link>
                       <hr />
-                      {/* <Link to="" className="hover:bg-gray-100 p-3">
-                        <li className="cursor-pointer">
-                          {t("navbar.key5.subKey.key3")}
-                        </li>
-                      </Link> */}
-                      {/* <hr /> */}
-                      {/* <Link to="/videos" className="hover:bg-gray-100 p-3">
-                        <li className="cursor-pointer">
-                          {t("navbar.key5.subKey.key4")}
-                        </li>
-                      </Link> */}
                     </ul>
                   </div>
                 )}
@@ -223,7 +212,7 @@ export const Navbar = () => {
                         </li>
                       </Link>
                       <hr />
-                      <Link to="/news" className="hover:bg-gray-100 p-3">
+                      <Link to="/newsPage" className="hover:bg-gray-100 p-3">
                         <li className="cursor-pointer">
                           {t("navbar.key5.subKey.key2")}
                         </li>
@@ -249,14 +238,14 @@ export const Navbar = () => {
                   {t("navbar.key6")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/adminlogin"
                   className="hover:text-black cursor-pointer"
                 >
                   Login
                 </Link>
-              </li>
+              </li> */}
               <button>
                 <Link
                   to="http://103.233.58.102/report"
@@ -412,14 +401,14 @@ export const Navbar = () => {
               <Link to="/contact" className="hover:text-black cursor-pointer">
                 सम्पर्क
               </Link>
-              <li>
+              {/* <li>
                 <Link
                   to="/adminlogin"
                   className="hover:text-black cursor-pointer"
                 >
                   Login
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         )}

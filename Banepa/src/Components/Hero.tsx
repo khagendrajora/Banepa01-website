@@ -35,7 +35,7 @@ export const Hero = () => {
         <Slider {...settings}>
           {images.map((image, index) => (
             <>
-              <div className="w-full hover:scale-125 duration-1000" key={index}>
+              <div className="w-full" key={index}>
                 <img
                   src={image.src}
                   alt={image.alt}

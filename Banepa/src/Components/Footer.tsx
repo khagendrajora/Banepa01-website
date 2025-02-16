@@ -10,19 +10,22 @@ export const Footer = () => {
   const offsetTop = 0;
   return (
     <>
-      <div className=" bg-[#245fb9] w-full relative flex flex-col font-poppin  justify-center items-center text-white  min-h-[280px]">
-        <div className="bg-[url('/footer4.jpg')]  absolute inset-0 bg-cover bg-center opacity-15 z-0 pointer-events-none"></div>
-        <div className="flex relative z-10 flex-wrap lg:justify-center justify-between gap-3 md:gap-10 lg:gap-20 2xl:gap-40 items-start p-10 w-full">
-          <div className="flex flex-col text-white  text-start   bg-blue- opacity-90">
+      <div className=" bg-[#245fb9] w-full relative flex flex-col font-poppin  justify-center items-center text-white p-20 overflow-hidden ">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15  z-0 pointer-events-none"
+          style={{ backgroundImage: "url('/footer5.jpg')" }}
+        ></div>
+        <div className="flex relative z-10 flex-wrap lg:justify-center justify-start gap-3 md:gap-10 lg:gap-20 2xl:gap-40 items-start  w-full">
+          <div className="flex flex-col text-white  text-start">
             <h1 className="font-bold text-xl">ठेगाना</h1>
-            <hr className="w-[100px]" />
+            <hr className="min:w-[100px]" />
             <div className="flex flex-col py-5 text-sm">
               <h1>बनेपा नगरपालिका-१, बागमती, नेपाल </h1>
             </div>
           </div>
-          <div className="flex flex-col text-white  text-start   bg-blue- opacity-90">
+          <div className="flex flex-col text-white  text-start ">
             <h1 className="font-bold text-xl">सम्पर्क</h1>
-            <hr className="w-[100px]" />
+            <hr className="min:w-[100px]" />
             <div className="flex flex-col py-5 text-sm">
               <h1>
                 ‌‌+९७७-५६-५९७००४<br></br>
@@ -30,17 +33,17 @@ export const Footer = () => {
               </h1>
             </div>
           </div>
-          <div className="flex flex-col text-white  text-start gap-3  bg-blue- opacity-90">
+          <div className="flex flex-col text-white  text-start gap-3">
             <h1 className="font-bold text-xl">
               <h1>इमेल</h1>
               <hr />
               <div className="py-5">
-                <span className="text-sm"> info@banepa12.org</span>
+                <span className="text-sm"> info@banepa1.org</span>
               </div>
             </h1>
           </div>
 
-          <div className="flex flex-col text-white  text-start gap-3  bg-blue- opacity-90">
+          <div className="flex flex-col text-white  text-start gap-3">
             <h1 className="font-bold text-xl">
               <h1 className="">सामाजिक सञ्जाल</h1>
               <hr />
@@ -100,7 +103,7 @@ export const Footer = () => {
               </li>
             </Link>
             <Link
-              to="/workdone"
+              to=""
               onClick={() => {
                 setTimeout(() => {
                   window.scrollTo({
@@ -116,7 +119,7 @@ export const Footer = () => {
               </li>
             </Link>
             <Link
-              to="/news"
+              to="/newsPage"
               onClick={() => {
                 setTimeout(() => {
                   window.scrollTo({
@@ -145,8 +148,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="text-sm bg-blue-500 text-white  p-1 w-full text-center">
-        Copyright © २०८१ भरतपुर नगरपालिका वडा नं १२ Website by DigiSoft
-        Developers
+        Copyright © २०८१ बनेपा नगरपालिका वडा नं १ Website by DigiSoft Developers
       </div>
     </>
   );
