@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import { Dashboard } from "../Dashboard";
 
-export const Layout = () => {
+export const AdminLayout = () => {
   return (
     <>
       <Dashboard />

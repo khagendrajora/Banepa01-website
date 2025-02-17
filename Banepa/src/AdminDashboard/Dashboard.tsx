@@ -25,7 +25,7 @@ export const Dashboard = () => {
         return;
       }
       setIsButton(true);
-      const res = await fetch(`https://bharatpur12.org/new/api/logout`, {
+      const res = await fetch(``, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -189,7 +189,7 @@ export const Dashboard = () => {
                 </li>
                 <li>
                   <Link
-                    to="/admin/publication"
+                    to="/admin/publications"
                     className="flex items-center p-2 rounded-lg group"
                   >
                     <svg
@@ -228,7 +228,7 @@ export const Dashboard = () => {
                 </li>
                 <li>
                   <Link
-                    to="/admin/news"
+                    to="/admin/newslist"
                     className="flex items-center p-2 rounded-lg group"
                   >
                     <FontAwesomeIcon icon={faNewspaper} />

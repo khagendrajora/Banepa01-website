@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 export const TeamsPage = () => {
+  const offsetTop = 0;
+  useEffect(() => {
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
       <div className="w-full bg-gray-200  font-poppin">

@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 export const AboutUsPage = () => {
+  const offsetTop = 0;
+  useEffect(() => {
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
       <div className="w-full font-poppin">

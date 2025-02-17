@@ -11,8 +11,15 @@ export default defineConfig({
       "/api": {
         target: "http://localhost:4000",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
+  // optimizeDeps: {
+  //   include: ["nepali-datepicker-reactjs"],
+  // },
+  // build: {
+  //   rollupOptions: {
+  //     external: ["react-quill/dist/quill.snow.css"],
+  //   },
+  // },
 });

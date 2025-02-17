@@ -17,7 +17,7 @@ export interface IPublication extends Document {
   document: string;
 }
 
-export const Publication = () => {
+export const Publications = () => {
   const navigate = useNavigate();
   // const [isButton, setIsButton] = React.useState(false);
   const [info, setInfo] = useState<IPublication[]>([]);
@@ -25,7 +25,7 @@ export const Publication = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://bharatpur12.org/new/api/publications
+        const res = await fetch(`
 `);
         const data = await res.json();
         if (!res.ok) {
@@ -51,14 +51,11 @@ export const Publication = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/publications/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);
@@ -153,7 +150,7 @@ export const Publication = () => {
                   </td>
                   <td className="  py-4 font-semibold text-gray-900 dark:text-white">
                     <Link
-                      to={`https://bharatpur12.org/new/storage/app/public/${data.document}`}
+                      to={`/new/storage/app/public/${data.document}`}
                       className="hover:text-blue-500"
                     >
                       {data.document}

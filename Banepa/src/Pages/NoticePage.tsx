@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const NoticePage = () => {
+  const offsetTop = 0;
+  useEffect(() => {
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }, []);
   const navigate = useNavigate();
   const images = [
     {

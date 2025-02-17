@@ -2,13 +2,10 @@ import React from "react";
 import ReactImageUploading, { ImageListType } from "react-images-uploading";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import {
-  ButtonLoader,
-  englishToNepaliMap,
-  modules,
-} from "../../../Utils/ButtonLoader";
+import { ButtonLoader, convertToNepali } from "../../../Utils/ButtonLoader";
 import JoditEditor from "jodit-react";
 import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 export const AddIntro = () => {
   const editor = React.useRef(null);
@@ -17,7 +14,6 @@ export const AddIntro = () => {
   const [slider_images, setImages] = React.useState<ImageListType>([]);
   const [feature_image, setFeatureImage] = React.useState<File | null>();
   const [main_image, setMainImage] = React.useState<File | null>();
-
   const [inputs, setInputs] = React.useState<{
     title_en: string;
     title_np: string;
@@ -38,13 +34,6 @@ export const AddIntro = () => {
     []
   );
 
-  const convertToNepali = (english: string) => {
-    return english
-      .split("")
-      .map((char) => englishToNepaliMap[char] || char)
-      .join("");
-  };
-
   const HandleTitle = (title: string) => {
     const title_np = convertToNepali(title);
     setInputs({ ...inputs, title_np: title_np });
@@ -53,6 +42,7 @@ export const AddIntro = () => {
   const handleChange = (html: string) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
+
     const traverseNodes = (node: ChildNode) => {
       if (node.nodeType === Node.TEXT_NODE) {
         node.textContent = convertToNepali(node.textContent || "");
@@ -60,9 +50,7 @@ export const AddIntro = () => {
         node.childNodes.forEach(traverseNodes);
       }
     };
-
     doc.body.childNodes.forEach(traverseNodes);
-
     setInputs({ ...inputs, description_np: doc.body.innerHTML });
   };
 
@@ -111,7 +99,7 @@ export const AddIntro = () => {
         toast.error("Token Missing");
         return;
       }
-      const res = await fetch("https://bharatpur12.org/new/api/about-us", {
+      const res = await fetch("", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -196,12 +184,9 @@ export const AddIntro = () => {
               </div>
               <div className="flex flex-col gap-5 w-full pb-5 ">
                 <label className="font-medium">विवरण</label>
-
                 <ReactQuill
-                  theme="snow"
                   value={inputs.description_np}
                   onChange={handleChange}
-                  modules={modules}
                 />
               </div>
             </div>

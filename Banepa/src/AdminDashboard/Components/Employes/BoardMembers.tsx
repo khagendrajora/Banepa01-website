@@ -28,21 +28,13 @@ export const BoardMembers = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          `https://bharatpur12.org/new/api/board-members`
-        );
+        const res = await axios.get(``);
         if (res.status === 200 && res.data) {
           const data = res.data;
           const filterData = data.filter(
             (item: { category: string }) => item.category === "Board Member"
           );
-          // const data = res.data;
-          // if (!res.data) {
-          //   console.log(data.error);
-          // } else {
-          //   const filterData = data.filter(
-          //     (item: { category: string }) => item.category === "Board Member"
-          //   );
+
           setMembers(filterData);
         } else {
           console.log("Error:", res.data.error || "No data available");
@@ -66,14 +58,11 @@ export const BoardMembers = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/board-members/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);
@@ -101,9 +90,9 @@ export const BoardMembers = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
               />
             </svg>
@@ -151,8 +140,11 @@ export const BoardMembers = () => {
           </thead>
           <tbody className="text-center">
             {members &&
-              members.map((data) => (
-                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+              members.map((data, key) => (
+                <tr
+                  key={key}
+                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+                >
                   <td className=" py-4   font-semibold text-gray-900 dark:text-white">
                     {data.id}
                   </td>

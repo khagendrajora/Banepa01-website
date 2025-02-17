@@ -5,6 +5,10 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap');
+.ck-editor__editable {
+    min-height: 200px !important;
+    border: 1px solid #ccc !important;
+}
 
 @tailwind base;
 @tailwind components;

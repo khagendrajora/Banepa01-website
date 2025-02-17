@@ -8,7 +8,6 @@ import { WardIntroPage } from "./Pages/WardIntroPage";
 import { TeamsPage } from "./Pages/TeamsPage";
 import { PublicationPage } from "./Pages/PublicationPage";
 import { NoticePage } from "./Pages/NoticePage";
-
 import { NewsDetailPage } from "./Pages/NewsDetailPage";
 import { NoticeDetailPage } from "./Pages/NoticeDetailPage";
 import { TaxPage } from "./Pages/HeroComponents/TaxPage";
@@ -23,8 +22,6 @@ import { DashboardImage } from "./AdminDashboard/Components/DashboardImage/Dashb
 import { Intro } from "./AdminDashboard/Components/Introduction/Intro";
 import { Works } from "./AdminDashboard/Components/Works/Works";
 import { Notice } from "./AdminDashboard/Components/Notice/Notice";
-import { Publication } from "./Components/Publication";
-import { News } from "./Components/News";
 import { Employes } from "./AdminDashboard/Components/Employes/Employes";
 import { BoardMembers } from "./AdminDashboard/Components/Employes/BoardMembers";
 import { AddHero } from "./AdminDashboard/Components/DashboardImage/AddHero";
@@ -42,6 +39,9 @@ import { UpdateWork } from "./AdminDashboard/Components/Works/UpdateWork";
 import { UpdateNews } from "./AdminDashboard/Components/News/UpdateNews";
 import { UpdateEmploy } from "./AdminDashboard/Components/Employes/UpdateEmploy";
 import { UpdateBod } from "./AdminDashboard/Components/Employes/UpdateBod";
+import { AdminLayout } from "./AdminDashboard/Layout/AdminLayout";
+import { Publications } from "./AdminDashboard/Components/Publication/Publications";
+import { NewsList } from "./AdminDashboard/Components/News/NewsList";
 
 function App() {
   return (
@@ -56,16 +56,16 @@ function App() {
             <Route path="teams" element={<TeamsPage />} />\
             <Route path="publication" element={<PublicationPage />} />
             <Route path="notices" element={<NoticePage />} />
-            <Route path="noticedetail/:id" element={<NoticeDetailPage />} />
+            <Route path="noticedetail/:key" element={<NoticeDetailPage />} />
             <Route path="newsPage" element={<NewsPage />} />
-            <Route path="newsdetail/:id" element={<NewsDetailPage />} />
+            <Route path="newsdetail/:key" element={<NewsDetailPage />} />
             <Route path="taxpage" element={<TaxPage />} />
             <Route path="complain" element={<ComplainPage />} />
             <Route path="nagrikpatra" element={<NagrikPage />} />
             <Route path="budget" element={<BudgetPage />} />
           </Route>
           <Route path="adminlogin" element={<AdminLogin />} />
-          <Route path="admin" element={<Layout />}>
+          <Route path="admin" element={<AdminLayout />}>
             {/* <Route element={<PrivateRoute />}> */}
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="dashboarddata" element={<DashboardData />} />
@@ -73,8 +73,8 @@ function App() {
             <Route path="intro" element={<Intro />} />
             <Route path="works" element={<Works />} />
             <Route path="notice" element={<Notice />} />
-            <Route path="publication" element={<Publication />} />
-            <Route path="news" element={<News />} />
+            <Route path="publications" element={<Publications />} />
+            <Route path="newslist" element={<NewsList />} />
             <Route path="employes" element={<Employes />} />
             <Route path="boardmembers" element={<BoardMembers />} />
             <Route path="addhero" element={<AddHero />} />

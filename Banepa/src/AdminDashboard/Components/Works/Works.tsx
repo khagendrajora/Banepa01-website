@@ -27,7 +27,7 @@ export const Works = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://bharatpur12.org/new/api/our-works`);
+        const res = await fetch(``);
         const data = await res.json();
         if (!res.ok) {
           console.log(data.errors);
@@ -55,14 +55,11 @@ export const Works = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/our-works/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);
@@ -90,9 +87,9 @@ export const Works = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                 />
               </svg>
@@ -148,7 +145,7 @@ export const Works = () => {
                     </td>
                     <td className="p-4 ">
                       <img
-                        src={`https://bharatpur12.org/new/storage/app/public/${data.main_image}`}
+                        src={``}
                         className="w-16 md:w-32 max-w-full mx-auto max-h-full"
                         alt="Image"
                       />
@@ -167,7 +164,7 @@ export const Works = () => {
 
                     <td className="">
                       <img
-                        src={`https://bharatpur12.org/new/storage/app/public/${data.feature_image}`}
+                        src={``}
                         className="w-16 md:w-32 max-w-full mx-auto max-h-full"
                         alt="Image"
                       />

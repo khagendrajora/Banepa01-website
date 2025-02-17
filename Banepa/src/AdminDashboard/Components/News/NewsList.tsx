@@ -21,13 +21,13 @@ export interface INews extends Document {
   image: string;
 }
 
-export const News = () => {
+export const NewsList = () => {
   const [info, setInfo] = useState<INews[]>([]);
   const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://bharatpur12.org/new/api/samachar
+        const res = await fetch(`
   `);
         const data = await res.json();
         if (!res.ok) {
@@ -53,14 +53,11 @@ export const News = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/samachar/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);

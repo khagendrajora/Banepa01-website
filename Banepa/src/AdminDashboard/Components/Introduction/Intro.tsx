@@ -29,7 +29,7 @@ export const Intro = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://bharatpur12.org/new/api/about-us
+        const res = await fetch(`
   `);
         const data = await res.json();
         if (!res.ok) {
@@ -42,8 +42,7 @@ export const Intro = () => {
       }
     };
     fetchData();
-  }, [info]);
-  console.log(info);
+  }, []);
 
   const Delete = async () => {
     try {
@@ -55,14 +54,11 @@ export const Intro = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/about-us`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);
@@ -90,9 +86,9 @@ export const Intro = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                 />
               </svg>

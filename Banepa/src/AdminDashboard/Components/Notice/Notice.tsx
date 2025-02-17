@@ -27,7 +27,7 @@ export const Notice = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://bharatpur12.org/new/api/information`);
+        const res = await fetch(``);
         const data = await res.json();
         if (!res.ok) {
           console.log(data.error);
@@ -55,14 +55,11 @@ export const Notice = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/information/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);
@@ -174,7 +171,7 @@ export const Notice = () => {
                   </td> */}
                   <td className="p-4 ">
                     <img
-                      src={`https://bharatpur12.org/new/api/${data.image}`}
+                      src={``}
                       className="w-16 md:w-32 max-w-full mx-auto max-h-full"
                       alt="Image"
                     />

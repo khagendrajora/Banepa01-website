@@ -18,14 +18,11 @@ export const Employes = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          `https://bharatpur12.org/new/api/board-members`
-        );
-        // const data = await res.json();
+        const res = await axios.get(``);
+
         if (res.status === 200 && res.data) {
-          // console.log(data.error);
           const data = res.data;
-          // } else {
+
           const filterData = data.filter(
             (item: { category: string }) => item.category === "Staff"
           );
@@ -52,14 +49,11 @@ export const Employes = () => {
           return;
         }
         // setIsButton(id || "");
-        const response = await axios.delete(
-          `https://bharatpur12.org/new/api/board-members/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.delete(``, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const data = response.data;
         if (data.message) {
           toast.error(data.message);

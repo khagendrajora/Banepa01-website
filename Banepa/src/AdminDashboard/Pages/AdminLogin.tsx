@@ -19,7 +19,7 @@ export const AdminLogin = () => {
     onSubmit: async (values, { resetForm }) => {
       try {
         setIsButton(true);
-        const res = await fetch(`https://bharatpur12.org/new/api/login`, {
+        const res = await fetch(``, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

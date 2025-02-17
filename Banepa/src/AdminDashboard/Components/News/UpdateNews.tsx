@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
-import { ButtonLoader, ImageURl } from "../../../Utils/ButtonLoader";
+import {
+  ButtonLoader,
+  convertToNepali,
+  ImageURl,
+} from "../../../Utils/ButtonLoader";
 import JoditEditor from "jodit-react";
-import { NepaliDatePicker } from "nepali-datepicker-reactjs";
 import axios from "axios";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import { NepaliDatePicker } from "nepali-datepicker-reactjs";
+import "nepali-datepicker-reactjs/dist/index.css";
 
 export const UpdateNews = () => {
   const editor = React.useRef(null);
@@ -13,7 +20,6 @@ export const UpdateNews = () => {
   const navigate = useNavigate();
   const [isButton, setIsButton] = React.useState(false);
   const [image, setImage] = React.useState<File | null>();
-  // const [featureImage, setFeatureImage] = React.useState<ImageListType>([]);
   const [inputs, setInputs] = React.useState<{
     title_en: string;
     title_np: string;
@@ -34,12 +40,16 @@ export const UpdateNews = () => {
       setImage(file);
     }
   };
+  const HandleTitle = (title: string) => {
+    const title_np = convertToNepali(title);
+    setInputs({ ...inputs, title_np: title_np });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         await axios
-          .get(`https://bharatpur12.org/new/api/samachar/${id}`)
+          .get(``)
           .then(async (res) => {
             setInputs({
               title_en: res.data.title_en || "",
@@ -68,114 +78,19 @@ export const UpdateNews = () => {
     []
   );
 
-  const convertToNepali = (english: string, title: string) => {
-    const englishToNepaliMap: { [key: string]: string } = {
-      a: "अ",
-      b: "ब",
-      c: "स",
-      d: "द",
-      e: "इ",
-      f: "फ",
-      g: "ग",
-      h: "ह",
-      i: "इ",
-      j: "ज",
-      k: "क",
-      l: "ल",
-      m: "म",
-      n: "न",
-      o: "ओ",
-      p: "प",
-      q: "क",
-      r: "र",
-      s: "स",
-      t: "त",
-      u: "उ",
-      v: "व",
-      w: "व",
-      x: "क",
-      y: "य",
-      z: "ज",
-      A: "आ",
-      B: "भ",
-      C: "च",
-      D: "ढ",
-      E: "ई",
-      F: "फ़",
-      G: "घ",
-      H: "ह",
-      I: "ई",
-      J: "झ",
-      K: "ख",
-      L: "ल",
-      M: "म्",
-      N: "ण",
-      O: "ओ",
-      P: "फ",
-      Q: "क",
-      R: "ऱ",
-      S: "श",
-      T: "ठ",
-      U: "ऊ",
-      V: "व",
-      W: "व",
-      X: "क्ष",
-      Y: "य",
-      Z: "ज़",
-      "1": "१",
-      "2": "२",
-      "3": "३",
-      "4": "४",
-      "5": "५",
-      "6": "६",
-      "7": "७",
-      "8": "८",
-      "9": "९",
-      "0": "०",
-      "!": "!",
-      "@": "@",
-      "#": "#",
-      $: "₹",
-      "%": "%",
-      "^": "^",
-      "&": "&",
-      "*": "*",
-      "(": "(",
-      ")": ")",
-      _: "_",
-      "+": "+",
-      "=": "=",
-      "-": "—",
-      "/": "।",
-      ",": " ",
-      ".": "।",
-      ":": ":",
-      ";": ";",
-      "'": "’",
-      '"': "“",
-      "<": "‹",
-      ">": "›",
-      "?": "?",
-      "\\": "\\",
-      "|": "|",
-      "{": "{",
-      "}": "}",
-      "[": "[",
-      "]": "]",
-      "`": "ऽ",
-      "~": "~",
-      " ": " ",
+  const handleChange = (html: string) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    const traverseNodes = (node: ChildNode) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = convertToNepali(node.textContent || "");
+      } else if (node.childNodes.length) {
+        node.childNodes.forEach(traverseNodes);
+      }
     };
-    const nepaliText = english
-      .split("")
-      .map((char) => englishToNepaliMap[char] || char)
-      .join("");
-    if (title === "title") {
-      setInputs({ ...inputs, title_np: nepaliText });
-    }
-    // if (title === "description") {
-    //   setInputs({ ...inputs, description_np: nepaliText });
-    // }
+    doc.body.childNodes.forEach(traverseNodes);
+    setInputs({ ...inputs, description_np: doc.body.innerHTML });
   };
 
   const add = async (e: React.FormEvent) => {
@@ -199,16 +114,13 @@ export const UpdateNews = () => {
         toast.error("Token Missing");
         return;
       }
-      const res = await fetch(
-        `https://bharatpur12.org/new/api/samachar/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: formData,
-        }
-      );
+      const res = await fetch(``, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
       const data = await res.json();
       if (!res.ok) {
         toast.error(data.error);
@@ -267,7 +179,7 @@ export const UpdateNews = () => {
                   type="text"
                   name="title_np"
                   value={inputs.title_np}
-                  onChange={(e) => convertToNepali(e.target.value, "title")}
+                  onChange={(e) => HandleTitle(e.target.value)}
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                 />
@@ -289,13 +201,9 @@ export const UpdateNews = () => {
               </div>
               <div className="flex flex-col gap-5 w-full pb-5 ">
                 <label className="font-medium">विवरण</label>
-                <JoditEditor
-                  ref={editor}
+                <ReactQuill
                   value={inputs.description_np}
-                  config={config}
-                  onChange={(content) => {
-                    setInputs({ ...inputs, description_np: content });
-                  }}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -306,7 +214,6 @@ export const UpdateNews = () => {
                     setInputs({ ...inputs, date: value })
                   }
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
                 />
                 <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                   Date

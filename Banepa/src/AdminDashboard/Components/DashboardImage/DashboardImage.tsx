@@ -15,9 +15,7 @@ export const DashboardImage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `https://bharatpur12.org/new/api/slider-images`
-        );
+        const res = await fetch(``);
         const data = await res.json();
         if (!res.ok) {
           console.log(data.error);
