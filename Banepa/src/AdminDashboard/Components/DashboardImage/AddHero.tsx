@@ -19,7 +19,6 @@ export const AddHero = () => {
   };
   const add = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setIsButton(true);
     const formData = new FormData();
     formData.append("imageTitle", inputs.imageTitle);

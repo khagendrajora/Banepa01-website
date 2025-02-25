@@ -162,13 +162,6 @@ export const Notice = () => {
                     <div>{HTMLReactParser(data.description_np)}</div>
                   </td>
 
-                  {/* <td className="">
-                    <img
-                      src="/1.jpg"
-                      className="w-16 md:w-32 max-w-full mx-auto max-h-full"
-                      alt="Apple Watch"
-                    />
-                  </td> */}
                   <td className="p-4 ">
                     <img
                       src={``}

@@ -10,7 +10,7 @@ export const Footer = () => {
   const offsetTop = 0;
   return (
     <>
-      <div className=" bg-[#245fb9] w-full relative flex flex-col font-poppin  justify-center items-center text-white p-20 overflow-hidden ">
+      <div className=" bg-[#245fb9] w-full relative flex flex-col font-poppin  justify-center items-center text-white p-10 lg:p-20 overflow-hidden ">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15  z-0 pointer-events-none"
           style={{ backgroundImage: "url('/footer5.jpg')" }}

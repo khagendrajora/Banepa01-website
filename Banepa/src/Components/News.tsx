@@ -30,31 +30,31 @@ export const News = () => {
       year: "२०७३",
       title: "७६ बर्ष उमेर पुगेका जेष्ठ नागरिकहरुलाई सम्मान कार्यक्रम",
     },
-    {
-      src: "/banepa.jpg",
-      alt: "Hero Image 3",
-      month: "भाद्र",
-      key: "3",
-      day: "१०",
-      year: "२०७३",
-      title: "७६ बर्ष उमेर पुगेका जेष्ठ नागरिकहरुलाई सम्मान कार्यक्रम",
-    },
+    // {
+    //   src: "/banepa.jpg",
+    //   alt: "Hero Image 3",
+    //   month: "भाद्र",
+    //   key: "3",
+    //   day: "१०",
+    //   year: "२०७३",
+    //   title: "७६ बर्ष उमेर पुगेका जेष्ठ नागरिकहरुलाई सम्मान कार्यक्रम",
+    // },
   ];
   return (
     <>
       <div className="py-10  font-poppin relative bg-white">
-        <h1 className="font-bold flex mx-auto flex-col text-[50px] w-1/3 rounded text-center py-4 bg-ov gap-2">
+        <h1 className="font-bold  text-[50px] text-center py-4 bg-ov gap-2">
           समाचार
           {/* <div className="bg-black min-w-[120px]  mx-auto h-[1px]"></div> */}
         </h1>
-        <div className="w-full bg-zinc-100 flex flex-col items-center justify-center "></div>
+        {/* <div className="w-full bg-zinc-100 flex flex-col items-center justify-center "></div> */}
 
         <div className="flex flex-col justify-center relative w-full  mx-auto py-10  items-center lg:w-11/12 ">
           <div className="flex w-full  justify-center flex-wrap gap-9 p-2 ">
             {images.map((image, index) => (
               <div
                 key={index}
-                className=" relative shadow-sm bg-white md:w-2/5 lg:w-1/3 xl:w-1/5 w-full sm:w-3/4"
+                className=" relative shadow-sm bg-white md:w-2/5 lg:min-w-[300px] max-w-[300px] lg:w-1/3 xl:w-1/5 w-full sm:w-3/4"
               >
                 <div>
                   <div className="overflow-hidden">

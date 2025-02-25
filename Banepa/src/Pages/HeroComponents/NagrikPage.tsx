@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 export const NagrikPage = () => {
+  const offsetTop = 0;
+  useEffect(() => {
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
       <div className="w-full font-poppin">
@@ -13,25 +22,76 @@ export const NagrikPage = () => {
           </h1>
         </div>
 
-        <div className="flex flex-row md:w-11/12  flex-wrap justify-center mx-auto  p-4 py-10 ">
-          <div className="p-2 xl:p-5 lg:w-1/2  w-full flex flex-col gap-5">
-            <p className="text-gray-600 leading-10 text-justify font-normal ">
-              खोकना पूर्व गाउँ विकास समिति (VDC) हो जुन छिमेकी गाविसा बुंगमती,
-              छाम्पी, दुकुछाप र सानिबुसँग गाभिएर नेपालको बागमती अञ्चलको ललितपुर
-              जिल्लाको कार्यविनायक नगरपालिका गठन गरिएको छ। 1991 को नेपाली जनगणना
-              को समयमा, खोकना 4258 को जनसंख्या 699 व्यक्तिगत घरहरु मा बसोबास
-              थियो। 2011 को नेपाली जनगणना अनुसार, 1056 व्यक्तिगत घरहरु मा बसोबास
-              गर्ने 4927 को जनसंख्या थियो।. खोकना, एउटा परम्परागत र सानो नेवारी
-              गाउँ, जुन काठमाण्डौबाट करिब ८ किलोमिटर दक्षिणमा (पाटनको बाहिरी
-              भागमा) पर्छ। खोकना प्राचीनकालदेखि नै तोरीको तेल उत्पादनका लागि
-              प्रख्यात छ । राणा प्रधानमन्त्री चन्द्र शमशेरको पालामा सन् १९११ मा
-              विद्युतले जलाउने नेपालको पहिलो सहर पनि थियो ।
-            </p>
+        <div className="flex flex-col w-3/4 mx-auto gap-10 p-4 py-10">
+          <div className="font-bold text-4xl text-[#245fb9]">
+            नागरिक वडापत्र
           </div>
-          <div
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">नागरिक वडापत्र २०७९</h1>
+            <div>Post Date: &nbsp; &nbsp; &nbsp;07/25/2022</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Ward Patra/नागरिक वडापत्र २०७९.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">नागरिक वडापत्र २०७५</h1>
+            <div>Post Date: &nbsp; &nbsp; &nbsp;07/07/2019</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Ward Patra/Final bharatpur citizen charter 2075 re.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">नागरिक बडापत्र २०७४</h1>
+            <div>Post Date: &nbsp; &nbsp; &nbsp;05/07/2017</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Ward Patra/citizencharter.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">नागरिक वडापत्र २०७२</h1>
+            <div>Post Date: &nbsp; &nbsp; &nbsp;08/19/2015</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Ward Patra/citizencharter.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+
+          {/* <div
             style={{
               overflow: "hidden",
               margin: "0 50px",
+
               textAlign: "center",
             }}
           >
@@ -42,7 +102,7 @@ export const NagrikPage = () => {
               style={{ border: "none", overflow: "hidden" }}
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             ></iframe>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

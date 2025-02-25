@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 export const BudgetPage = () => {
+  const offsetTop = 0;
+  useEffect(() => {
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
       <div className="w-full font-poppin">
@@ -12,25 +21,81 @@ export const BudgetPage = () => {
             बार्षिक&nbsp;बजेट
           </h1>
         </div>
-        <div className="flex flex-row md:w-11/12  flex-wrap justify-center mx-auto  p-4 py-20 ">
-          <div className="p-2 xl:p-5 lg:w-1/2  w-full flex flex-col gap-5">
-            {/* <h1 className="lg:text-6xl sm:text-4xl text-2xl p-2 font-bold">
-              संक्षिप्त परिचय
-            </h1> */}
-            <p className="text-gray-600 leading-10 text-justify font-normal ">
-              खोकना पूर्व गाउँ विकास समिति (VDC) हो जुन छिमेकी गाविसा बुंगमती,
-              छाम्पी, दुकुछाप र सानिबुसँग गाभिएर नेपालको बागमती अञ्चलको ललितपुर
-              जिल्लाको कार्यविनायक नगरपालिका गठन गरिएको छ। 1991 को नेपाली जनगणना
-              को समयमा, खोकना 4258 को जनसंख्या 699 व्यक्तिगत घरहरु मा बसोबास
-              थियो। 2011 को नेपाली जनगणना अनुसार, 1056 व्यक्तिगत घरहरु मा बसोबास
-              गर्ने 4927 को जनसंख्या थियो।. खोकना, एउटा परम्परागत र सानो नेवारी
-              गाउँ, जुन काठमाण्डौबाट करिब ८ किलोमिटर दक्षिणमा (पाटनको बाहिरी
-              भागमा) पर्छ। खोकना प्राचीनकालदेखि नै तोरीको तेल उत्पादनका लागि
-              प्रख्यात छ । राणा प्रधानमन्त्री चन्द्र शमशेरको पालामा सन् १९११ मा
-              विद्युतले जलाउने नेपालको पहिलो सहर पनि थियो ।
-            </p>
+        <div className="flex flex-col w-3/4 mx-auto gap-10 p-4 py-10">
+          <div className="font-bold text-4xl text-[#245fb9]">
+            बार्षिक&nbsp;बजेट
           </div>
-          <div
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">
+              आ. व. २०८१-८२ को योजना किताव
+            </h1>
+            <div>Published Date: &nbsp; &nbsp; &nbsp;2081/04/31</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Budget/Budget Book 2081-82.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">
+              आर्थिक वर्ष २०८१/२०८२ को बजेट वक्तव्य
+            </h1>
+            <div>Published Date: &nbsp; &nbsp; &nbsp;</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Budget/आर्थिक वर्ष २०८१।२०८२ को बजेट वक्तव्य ।.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">
+              आ. व. २०८१/२०८२ को प्रस्तावित नीति तथा कार्यक्रम
+            </h1>
+            <div>Published Date: &nbsp; &nbsp; &nbsp;</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Budget/आ. व. २०८१२०८२ को प्रस्तावित नीति तथा कार्यक्रम ।.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold text-2xl">
+              आ. व. २०८०-८१ को योजना किताव
+            </h1>
+            <div>Published Date: &nbsp; &nbsp; &nbsp;</div>
+            <div>
+              Document: &nbsp; &nbsp;
+              <a
+                href="/Budget/Inner Page_BW_Final.pdf"
+                download
+                className="cursor-pointer text-blue-700"
+              >
+                Download File
+              </a>{" "}
+            </div>
+            <hr />
+          </div>
+
+          {/* <div
             style={{
               overflow: "hidden",
               margin: "0 50px",
@@ -45,49 +110,8 @@ export const BudgetPage = () => {
               style={{ border: "none", overflow: "hidden" }}
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             ></iframe>
-          </div>
+          </div> */}
         </div>
-        {/* <div className="flex w-full flex-wr lg:h-32 h-fit gap-[2px] text-white font-semibold lg:text-2xl overflow-x-auto -mt-[5px]"> */}
-        {/* <div className="bg-blue-300 hover:bg-blue-400 cursor-pointer  min-w-[100px] w-1/5 flex justify-center lg:gap-10 gap-2 flex-wrap items-center">
-          <FontAwesomeIcon icon={faCreditCard} style={{ color: "#f7f7f7" }} />
-          NOtice
-          <FontAwesomeIcon
-            icon={faArrowUpRightFromSquare}
-            style={{ color: "#ffffff" }}
-          />
-        </div> */}
-        {/* <div className="bg-blue-400 hover:bg-blue-500 cursor-pointer  p-5  w-1/5 flex justify-center  lg:gap-10 flex-wrap gap-2 items-center">
-          <FontAwesomeIcon icon={faCreditCard} style={{ color: "#f7f7f7" }} />
-          NOtice
-          <FontAwesomeIcon
-            icon={faArrowUpRightFromSquare}
-            style={{ color: "#ffffff" }}
-          />
-        </div> */}
-
-        {/* <div className="bg-red-400 hover:bg-red-500 cursor-pointer  p-5  w-1/5  flex justify-center lg:gap-10 flex-wrap gap-2 items-center">
-          <FontAwesomeIcon
-            icon={faFileCirclePlus}
-            style={{ color: "#ffffff" }}
-          />
-          Notice
-          <FontAwesomeIcon
-            icon={faArrowUpRightFromSquare}
-            style={{ color: "#ffffff" }}
-          />
-        </div> */}
-        {/* 
-        <div className="bg-lime-500 hover:bg-lime-600 cursor-pointer p-5  w-1/5  flex justify-center lg:gap-10 flex-wrap gap-2 items-center">
-          <FontAwesomeIcon
-            icon={faFileCirclePlus}
-            style={{ color: "#ffffff" }}
-          />
-          NOtice
-          <FontAwesomeIcon
-            icon={faArrowUpRightFromSquare}
-            style={{ color: "#ffffff" }}
-          />
-        </div> */}
       </div>
     </>
   );

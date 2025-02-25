@@ -102,7 +102,7 @@ export const Navbar = () => {
                 <li onClick={() => moveUp()}>{t("navbar.key1")}</li>
               </Link>
               <li
-                className={`hover:text-black cursor-pointer relative ${
+                className={`hover:text-black min-w-[58px] cursor-pointer relative ${
                   isActive("/aboutus") ||
                   isActive("/toleintro") ||
                   isActive("/wardintro")
@@ -146,7 +146,7 @@ export const Navbar = () => {
               </li>
               <Link
                 to=""
-                className="hover:text-black cursor-pointer"
+                className="hover:text-black min-w-[62px] cursor-pointer"
                 onClick={() => {
                   works();
                 }}
@@ -238,17 +238,10 @@ export const Navbar = () => {
                   {t("navbar.key6")}
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  to="/adminlogin"
-                  className="hover:text-black cursor-pointer"
-                >
-                  Login
-                </Link>
-              </li> */}
+
               <button>
                 <Link
-                  to="http://103.233.58.102/report"
+                  to=""
                   target="_blank"
                   className="hover:bg-red-600 px-4 cursor-pointer text-white font-bold text-md bg-red-500  p-2 rounded-full"
                 >

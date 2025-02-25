@@ -124,7 +124,7 @@ export const UpdatePublication = () => {
             onSubmit={add}
             className="flex w-full justify-center gap-20 flex-col mx-auto  border md:p-10 p-2"
           >
-            <div className="flex flex-col gap-10 ">
+            <div className="flex flex-col gap-16 ">
               <h1 className="font-bold text-xl pb-10 text-center lg:text-2xl">
                 Update Publication
               </h1>
@@ -195,8 +195,8 @@ export const UpdatePublication = () => {
               </div>
             </div>
 
-            <div>
-              <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <div className="flex justify-center  w-full ">
+              <button className="text-white font-medium bg-blue-700 hover:bg-blue-800  text-lg w-full lg:w-1/4  p-3 text-center">
                 Submit {isButton ? <ButtonLoader /> : ""}
               </button>
             </div>

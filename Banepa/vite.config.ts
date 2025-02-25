@@ -14,12 +14,4 @@ export default defineConfig({
       },
     },
   },
-  // optimizeDeps: {
-  //   include: ["nepali-datepicker-reactjs"],
-  // },
-  // build: {
-  //   rollupOptions: {
-  //     external: ["react-quill/dist/quill.snow.css"],
-  //   },
-  // },
 });
